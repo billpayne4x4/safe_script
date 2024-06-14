@@ -1,4 +1,4 @@
-use crate::parser::ast_node::AstNode;
+use crate::types::ast_node::AstNode;
 
 pub(crate) struct Ast {
     pub statements: Vec<AstNode>,

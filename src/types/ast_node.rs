@@ -1,5 +1,5 @@
-use crate::parser::tokens::Tokens;
-use crate::parser::dynamic_value::DynamicValue;
+use crate::types::tokens::Tokens;
+use crate::types::dynamic_value::DynamicValue;
 
 pub(crate) struct AstNode {
     pub token: Tokens,
