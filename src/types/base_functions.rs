@@ -1,5 +1,5 @@
 #[derive(Debug, Clone, PartialEq)]
-pub(crate) enum BaseFunctions {
+pub enum BaseFunctions {
     If,
     Else,
     For,
@@ -13,7 +13,7 @@ pub(crate) enum BaseFunctions {
 }
 
 impl BaseFunctions {
-    pub(crate) fn from_str(s: &str) -> Option<Self> {
+    pub fn from_str(s: &str) -> Option<Self> {
         match s {
             "if" => Some(BaseFunctions::If),
             "else" => Some(BaseFunctions::Else),

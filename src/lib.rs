@@ -1,8 +1,16 @@
+// Lexer
+#[cfg(any(test, bench))]
+pub mod lexer;
+#[cfg(not(any(test, bench)))]
 pub(crate) mod lexer;
-mod types;
-//pub(crate) mod parser;
-//pub(crate) mod interpreter;
 
-#[cfg(test)]
-mod tests;
+// Types
+#[cfg(any(test, bench))]
+pub mod types;
+#[cfg(not(any(test, bench)))]
+pub(crate) mod types;
 
+// Benchmarks
+#[cfg(bench)]
+pub mod benchmarks;
+mod benchmarks;

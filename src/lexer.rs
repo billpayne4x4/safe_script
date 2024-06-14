@@ -3,20 +3,20 @@ use crate::types::tokens::Tokens;
 use crate::types::numeric::Numeric;
 use crate::types::base_functions::BaseFunctions;
 
-pub(crate) struct Lexer {
+pub struct Lexer {
     input: String,
     pos: usize,
 }
 
 impl Lexer {
-    pub(crate) fn new(script: &str) -> Self {
+    pub fn new(script: &str) -> Self {
         Lexer {
             input: script.to_string(),
             pos: 0,
         }
     }
 
-    pub(crate) fn tokenize(&mut self) -> Vec<Tokens> {
+    pub fn tokenize(&mut self) -> Vec<Tokens> {
         let mut tokens = Vec::new();
         while self.pos < self.input.len() {
             self.skip_whitespace();

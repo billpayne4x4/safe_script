@@ -1,7 +1,7 @@
 use crate::types::tokens::Tokens;
 use crate::types::dynamic_value::DynamicValue;
 
-pub(crate) struct AstNode {
+pub struct AstNode {
     pub token: Tokens,
     pub left: Option<Box<DynamicValue>>,
     pub right: Option<Box<DynamicValue>>,

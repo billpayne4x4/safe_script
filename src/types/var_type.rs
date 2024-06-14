@@ -1,5 +1,5 @@
 #[derive(Debug, Clone, PartialEq)]
-pub(crate) enum VarType {
+pub enum VarType {
     Node,
     Int,
     Float,
@@ -13,7 +13,7 @@ pub(crate) enum VarType {
 }
 
 impl VarType {
-    pub(crate) fn from_str(s: &str) -> Option<Self> {
+    pub fn from_str(s: &str) -> Option<Self> {
         match s {
             "int" => Some(VarType::Int),
             "float" => Some(VarType::Float),

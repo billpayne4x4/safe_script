@@ -2,7 +2,7 @@ use std::collections::HashMap;
 use crate::types::ast_node::AstNode;
 use crate::types::var_type::VarType;
 
-pub(crate) enum DynamicValue {
+pub enum DynamicValue {
     Node(Box<AstNode>),
     Int(i64),
     Long(f64),
@@ -16,77 +16,77 @@ pub(crate) enum DynamicValue {
 }
 
 impl DynamicValue {
-    pub(crate) fn as_node(&self) -> Option<&AstNode> {
+    pub fn as_node(&self) -> Option<&AstNode> {
         match self {
             DynamicValue::Node(n) => Some(n),
             _ => None,
         }
     }
 
-    pub(crate) fn as_int(&self) -> Option<i64> {
+    pub fn as_int(&self) -> Option<i64> {
         match self {
             DynamicValue::Int(i) => Some(*i),
             _ => None,
         }
     }
 
-    pub(crate) fn as_long(&self) -> Option<f64> {
+    pub fn as_long(&self) -> Option<f64> {
         match self {
             DynamicValue::Long(f) => Some(*f),
             _ => None,
         }
     }
 
-    pub(crate) fn as_string(&self) -> Option<&str> {
+    pub fn as_string(&self) -> Option<&str> {
         match self {
             DynamicValue::String(s) => Some(s),
             _ => None,
         }
     }
 
-    pub(crate) fn as_bool(&self) -> Option<bool> {
+    pub fn as_bool(&self) -> Option<bool> {
         match self {
             DynamicValue::Bool(b) => Some(*b),
             _ => None,
         }
     }
 
-    pub(crate) fn as_char(&self) -> Option<char> {
+    pub fn as_char(&self) -> Option<char> {
         match self {
             DynamicValue::Char(c) => Some(*c),
             _ => None,
         }
     }
 
-    pub(crate) fn as_byte(&self) -> Option<u8> {
+    pub fn as_byte(&self) -> Option<u8> {
         match self {
             DynamicValue::Byte(b) => Some(*b),
             _ => None,
         }
     }
 
-    pub(crate) fn as_array(&self) -> Option<&Vec<DynamicValue>> {
+    pub fn as_array(&self) -> Option<&Vec<DynamicValue>> {
         match self {
             DynamicValue::Array(a) => Some(a),
             _ => None,
         }
     }
 
-    pub(crate) fn as_object(&self) -> Option<&HashMap<String, DynamicValue>> {
+    pub fn as_object(&self) -> Option<&HashMap<String, DynamicValue>> {
         match self {
             DynamicValue::Object(o) => Some(o),
             _ => None,
         }
     }
 
-    pub(crate) fn as_null(&self) -> bool {
+    pub fn as_null(&self) -> bool {
         match self {
             DynamicValue::Null => true,
             _ => false,
         }
     }
 
-    pub(crate) fn get_type(&self) -> VarType {
+    pub fn get_type(&self) -> VarType {
         match self {
             DynamicValue::Node(_) => VarType::Node,
             DynamicValue::Int(_) => VarType::Int,

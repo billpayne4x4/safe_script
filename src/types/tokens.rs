@@ -3,7 +3,7 @@ use crate::types::base_functions::BaseFunctions;
 use crate::types::numeric::Numeric;
 
 #[derive(Debug, Clone, PartialEq)]
-pub(crate) enum Tokens {
+pub enum Tokens {
     Identifier(String),		        // Identifier
     StringLiteral(String),	        // String literal
     NumberLiteral(Numeric),	        // Numeric literal
