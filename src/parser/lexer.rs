@@ -534,7 +534,7 @@ fn test_string_literal() {
 }
 
 #[test]
-fn test_tokenize_string_literal_with_various_escapes() {
+fn test_string_literal_with_escapes() {
     let script = r#""Line 1\nLine 2\tTabbed\\Backslash\"Quote\"\rCarriageReturn\'SingleQuote""#;
     let mut lexer = Lexer::new(script);
     let tokens = lexer.tokenize();
